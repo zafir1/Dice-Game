@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row card card-body bg-light mt-3">
+            <div class="card card-body bg-white text-center">
+                <h3>Dice Game</h3>
+            </div>
+        </div>
+        
+        <div class="row mt-2">
+            <div class="col-sm-6 card card-body bg-light ">
+                <div class="bg-white">
+                    <div class="text-center mt-3">
+                        <b id="player-0-name">Player 0</b>
+                        <div id="player-0-active"></div>
+                    </div>
+                    <div class="p-5 bg-white text-center">
+                        <h3 id="player-0-score">0</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 card card-body bg-light ">
+                <div class="bg-white">
+                    <div class="text-center mt-3">
+                        <b id="player-1-name">Player 1</b>
+                        <div id="player-1-active"></div>
+                    </div>
+                    <div class="p-5 bg-white text-center">
+                        <h3 id="player-1-score">0</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row card card-body bg-light text-center mt-1">
+             <div class="card card-body bg-white">
+                 <div class="row">
+                     <div class="col-sm-4 text-center text-justify"></div>
+                     <div class="col-sm-4 text-center text-justify">
+                         <div class="p-2" id="current-dice-value">
+                             Start Rolling Dice
+                         </div>
+                         <div class="row">
+                            <div class="col-sm-6">
+                                <div class="p-2">
+                                    <button class="btn btn-outline-success" id="dice">Role Dice</button>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class=" p-2">
+                                    <button class="btn btn-outline-danger" id="hold">Hold</button>
+                                </div>
+                            </div>
+                         </div>
+                     </div>
+                     <div class="col-sm-4 text-center text-justify"></div>
+                 </div>
+             </div>
+        </div>
+    </div>
+</body>
+<script src="../js/main.js"></script>
+<script src="../js/initialize.js"></script>
+</html>

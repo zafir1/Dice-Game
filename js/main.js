@@ -3,6 +3,20 @@ scores = [0,0];
 activePlayer = 0;
 roundScore = 0;
 
+var p1,p0;
+p0 = prompt("Enter First Player Name");
+p1 = prompt("Enter Second Player Name");
+if(p0.length==0){
+    p0 = "Player 1";
+}
+if(p1.length==0){
+    p1 = "Player 2";
+}
+document.getElementById("player-1-score").textContent = 0;
+document.getElementById("player-0-score").textContent = 0;
+document.getElementById('player-0-name').textContent = p0;
+document.getElementById('player-1-name').textContent = p1;
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
@@ -15,6 +29,8 @@ number = rollDice();
 
 function togglePlayer(){
     activePlayer = 1-activePlayer;
+    activeStatus();
+    diceButtonColor();
 }
 
 function diceButtonColor(){
@@ -53,10 +69,12 @@ function winMessage(p){
 }
 
 function activeStatus(){
-    
+    document.getElementById('player-'+activePlayer+'-active').innerHTML = 'Active';
+    document.getElementById('player-'+(1-activePlayer)+'-active').innerHTML = '';
 }
 
 document.querySelector('#dice').addEventListener('click',function(){
+    activeStatus();
     let dice = rollDice();
     document.querySelector("#current-dice-value").innerHTML = "<b>"+ dice +"</b>";
     document.querySelector('#player-'+ activePlayer + '-score').innerHTML = "<b>"+ scores[activePlayer] +"</b>";
@@ -73,6 +91,7 @@ document.querySelector('#dice').addEventListener('click',function(){
     if(checkWin()){
         winMessage(activePlayer);
     }
+    activeStatus();
 });
 
 document.getElementById('hold').addEventListener('click',togglePlayer);
